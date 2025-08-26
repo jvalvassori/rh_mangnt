@@ -35,7 +35,7 @@ class AdminController extends Controller
             ->groupBy('department_id')
             ->map(function ($department) {
                 return [
-                    ' ' => $department->first()->department->name ?? "Sem departamento",
+                    'department' => $department->first()->department->name ?? "Sem departamento",
                     'total' => $department->count()
                 ];
             });
